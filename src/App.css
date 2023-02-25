@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+/* navbar */
+.nav-item {
+  font-family: "Montserrat";
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 12px;
+  color: #333333;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* banner */
+.banner {
+  background: url("https://i.postimg.cc/tJzVmLNW/daniel-leone-v7da-TKl-Zzaw-unsplash-1-1.png")
+    no-repeat;
+  width: 100%;
+  height: 342px;
+  background-size: 100% 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.banner-title {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 32px;
+  color: #ffffff;
+  padding-top: 6rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.banner-details {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #c4c4c4;
+}
+/* card */
+.author {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
+}
+.user-name {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 15px;
+  color: #4f4f4f;
+}
+.userName {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 600;
+  font-size: 15px;
+  color: #a7a7a7;
+}
+.likes {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  color: #4f4f4f;
+}
+.modal-footer {
+  border-top-width: 0px !important;
+  padding: 0 !important;
+}
+.close-modal {
+  cursor: pointer;
+  font-size: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.modal-card {
+  border: 0 !important;
+}
+.card-dark {
+  background: #141414;
+}
+.user-dark {
+  color: white !important;
+}
+.username-dark {
+  color: #a7a7a7;
+}
+/* color theme */
+.dark-mode {
+  background-color: #1a1919;
+  color: #999;
+  height: 100%;
+  transition: background-color 0.25s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.light-mode {
+  background-color: #fff;
+  color: #333;
+  height: 100%;
+  transition: background-color 0.25s ease-in-out;
+}
+.theme-name {
+  margin: 0 !important;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #ccc;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ccc;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.switch-checkbox {
+  padding: 10px;
 }
