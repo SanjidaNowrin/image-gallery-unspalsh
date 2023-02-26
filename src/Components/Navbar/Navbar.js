@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 import { Image } from "react-bootstrap";
 import SearchBar from "../SearchBar/SearchBar";
+import { THEME_CONTEXT } from "../../App";
 
-const NavBar = ({ darkMode, setDarkMode, handleSearch }) => {
+const NavBar = () => {
+  const { darkMode, setDarkMode, handleSearch } = useContext(THEME_CONTEXT);
   return (
     <Navbar expand="lg">
       <Container className="mt-2">

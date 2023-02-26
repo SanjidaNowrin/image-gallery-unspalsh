@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Image, Card } from "react-bootstrap";
@@ -7,8 +7,10 @@ import Spinner from "react-bootstrap/Spinner";
 import { AiOutlineLike } from "react-icons/ai";
 
 import ImageModal from "./ImageModal";
+import { THEME_CONTEXT } from "../../App";
 
-const Images = ({ darkMode, search }) => {
+const Images = () => {
+  const { darkMode, search } = useContext(THEME_CONTEXT);
   const [images, setImages] = useState([]);
   const [show, setShow] = useState(false);
   const [details, setDetails] = useState({});

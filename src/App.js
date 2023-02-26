@@ -2,7 +2,8 @@ import "./App.css";
 import Banner from "./Components/Banner/Banner";
 import Navbar from "./Components/Navbar/Navbar";
 import Images from "./Components/Images/Images";
-import { useState } from "react";
+import { createContext, useState } from "react";
+export const THEME_CONTEXT = createContext();
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [search, setSearch] = useState("");
@@ -12,16 +13,15 @@ function App() {
     setSearch(value);
   };
 
+  const value = { darkMode, setDarkMode, handleSearch, search };
   return (
-    <div className={darkMode ? "dark-mode" : "light-mode"}>
-      <Navbar
-        setDarkMode={setDarkMode}
-        darkMode={darkMode}
-        handleSearch={handleSearch}
-      />
-      <Banner handleSearch={handleSearch} />
-      <Images darkMode={darkMode} search={search} />
-    </div>
+    <THEME_CONTEXT.Provider value={value}>
+      <div className={darkMode ? "dark-mode" : "light-mode"}>
+        <Navbar />
+        <Banner />
+        <Images />
+      </div>
+    </THEME_CONTEXT.Provider>
   );
 }
 

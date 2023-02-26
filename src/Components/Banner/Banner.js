@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { THEME_CONTEXT } from "../../App";
 import SearchBar from "./../SearchBar/SearchBar";
 
-const Banner = ({ handleSearch }) => {
+const Banner = () => {
+  const { handleSearch } = useContext(THEME_CONTEXT);
   return (
     <div className="banner text-center mb-5">
       <h2 className="banner-title">Download High Quality Images by creators</h2>
